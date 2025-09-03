@@ -1,16 +1,19 @@
-#!/bin/bash
+echo "Starting this miner script..."
 
+START=10
+END=1000
 
-echo "Starting this script (hopefully it is executable with chmod a+x ./miner.sh)"
-
-VARIABLE=some_string
-
-echo $VARIABLE
-
-## Prints all words in provided dictionary
-## (you might want to find a bigger dictionary)
-for i in $(cat ../data/dictionary); do
-  printf $i
+for word in $(cat "../data/dictionary"); do
+    for nonce in $(seq $START $END); do
+        CANDIDATE="${nonce}${word}"
+        HASH=$(echo -n "$CANDIDATE" | sha256sum | awk '{print $1}')
+        # to see each candidate and hash, uncomment the next line
+        # echo "$CANDIDATE -> $HASH"
+        if [[ $HASH == 00000* ]]; then
+            echo "Found valid nonce-word combination - $CANDIDATE with hash: $HASH"
+            exit 0
+        fi
+    done
 done
 
 
