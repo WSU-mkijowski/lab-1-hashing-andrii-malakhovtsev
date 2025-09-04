@@ -2,12 +2,18 @@
 
 INPUT="quiz_data.csv"
 OUTPUT="salted-data.csv"
-FIXED_SALT="13377"
 
 awk -F',' -v OFS=',' -v salt="$FIXED_SALT" '
-NR==1 { print; next } # Skip the header
+BEGIN { srand() } 
+NR==1 { print; next } # Skip header for the next script
 {
-    # Add salt to the first column
+    # If this is a new user - generate new salt
+    if ($1 != prev_user) {
+        prev_user = $1
+        salt = sprintf("%05d", int(rand() * 100000))
+    }
+
+    # Add salt to the user identifier
     salted_identifier = salt $1
 
     # Compute SHA-256 hash into CMD
