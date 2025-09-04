@@ -37,15 +37,21 @@ Answer the following:
 hash)
 
 ```
-
+819nature
 ```
 
 * How many words were in your dictionary?
+> 1000
 * How many nonces did your code iterate over?
+> Unique ones - 991, repeating ones - 980088
 * What was the maximum number of hashes your code *could* compute given the above?
+> If before finding the first 5 leading zeros - 980088, if just all combinations - 991000
 * What did you think about Task 2?
+> It was pretty fun to try to brute froce into something, feels like hacking from movies.
 * Is there a better way than brute force to attempt to get higher valued coins?
+> Doesn't seem so.
 * Why or why not?
+> SHA-256 seems like one of the most up to date hashing algorithms, so no doubling and since it's even used for crytpocurrencies for securing transactions. If there was a way, they would already be cracked by now for the money.
 
 
 ```bash
