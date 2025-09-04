@@ -29,9 +29,6 @@ awk -F',' 'NR>1 {print $1}' quiz_data.csv | sort | uniq | wc -l
 
 ### Task 2: Crypto Mining
 
-**Reminder Deliverable:** Is your "mining" code in this repository (`mining/`)?
-**Reminder Deliverable:** Is your nonce + word combos in `coins.txt`?
-
 Answer the following:
 
 * Paste your ***nonce+word(s) and hash(s)*** below ( either 3x `000` hashes or 1x `0000`
