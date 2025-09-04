@@ -16,10 +16,5 @@ for word in $(cat "../data/dictionary"); do
     done
 done
 
-
-## prints all numbers between 100 and 105
-for i in $(seq 100 105); do
-  printf $i
-done
-
-
+# in case there is no match at all
+echo "No match found in range $START–$END."
