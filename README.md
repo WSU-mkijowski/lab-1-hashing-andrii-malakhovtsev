@@ -44,19 +44,19 @@ hash)
 * How many words were in your dictionary?
 > 1000
 * How many nonces did your code iterate over?
-> Unique ones - 991, repeating ones - 980088
+> Unique ones: 991 (10 to 1000)
+
+> Per found 5 leading zeros combination: 810
+
+> Repeating ones (found combination on word #989 and nonce 819 which is number #810): 991 nonces * 988 words + 810 nonces for the last word = 979,918
 * What was the maximum number of hashes your code *could* compute given the above?
-> If before finding the first 5 leading zeros - 980088, if just all combinations - 991000
+> If before finding the first 5 leading zeros: again 979,918
+
+> If just all combinations: 991 nonces * 1000 words = 991,000
 * What did you think about Task 2?
 > It was pretty fun to try to brute froce into something, feels like hacking from movies.
 * Is there a better way than brute force to attempt to get higher valued coins?
 > Doesn't seem so.
 * Why or why not?
-> SHA-256 seems like one of the most up to date hashing algorithms, so no doubling and since it's even used for crytpocurrencies for securing transactions. If there was a way, they would already be cracked by now for the money.
-
-
-```bash
-please put any cool bash one-liners or other piped commands you
-learned/struggled with for task 2 here
-```
+> SHA-256 seems like one of the most up to date hashing algorithms, so no doubling and since it's even used for crytpocurrencies for securing transactions - if there was a way, they would already be cracked by now for the money.
 
