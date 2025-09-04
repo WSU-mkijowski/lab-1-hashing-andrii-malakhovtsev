@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Starting this miner script..."
 
 START=10
