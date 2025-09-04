@@ -6,19 +6,24 @@
 ### Task 1: Hashing
 
 * How many unique users are in the data?
-> 42
+
+  42
 * How many salts did you create?
-> 42 for users, 84 for salt+user, 168 for salt+hash of (salt+user)
+
+  42 for users, 84 for salt+user, 168 for salt+hash of (salt+user)
 * How many possible combinations will I need to try to figure out the secret ID
   of all students (assume I know all potential secret IDs and have your 
   `salted-data.csv`)
-> 5 digit salts - 100,000. 42 users = 42 * 100,000 = 4,200,000
+
+  5 digit salts - 100,000. 42 users = 42 * 100,000 = 4,200,000
 * Instead of salts, if you were to use a nonce (unique number for each hashed
   field) how many possible combinations would I need to try?
-> 1303 lines * 100,000 (5 digit nonce) = 130,300,000
+
+  1303 lines * 100,000 (5 digit nonce) = 130,300,000
 * Given the above, if this quiz data were *actual* class data, say for example
   your final exam, how would you store this dataset?  Why?
-> Definitely prefere nonce for just more combinations for cracking.
+
+  Definitely prefere nonce for just more combinations for cracking.
 
 This allows to count for unique users (I realized too late that by excel it was meant to do the steps manually)
 ```bash
@@ -39,21 +44,27 @@ hash)
 ```
 
 * How many words were in your dictionary?
-> 1000
+
+  1000
 * How many nonces did your code iterate over?
-> Unique ones: 991 (10 to 1000)
 
-> Per found 5 leading zeros combination: 810
+  Unique ones: 991 (10 to 1000)
 
-> Repeating ones (found combination on word #989 and nonce 819 which is number #810): 991 nonces * 988 words + 810 nonces for the last word = 979,918
+  Per found 5 leading zeros combination: 810
+
+  Repeating ones (found combination on word #989 and nonce 819 which is number #810): 991 nonces * 988 words + 810 nonces for the last word = 979,918
 * What was the maximum number of hashes your code *could* compute given the above?
-> If before finding the first 5 leading zeros: again 979,918
 
-> If just all combinations: 991 nonces * 1000 words = 991,000
+  If before finding the first 5 leading zeros: again 979,918
+
+  If just all combinations: 991 nonces * 1000 words = 991,000
 * What did you think about Task 2?
-> It was pretty fun to try to brute froce into something, feels like hacking from movies.
+
+  It was pretty fun to try to brute froce into something, feels like hacking from movies.
 * Is there a better way than brute force to attempt to get higher valued coins?
-> Doesn't seem so.
+
+  Doesn't seem so.
 * Why or why not?
-> SHA-256 seems like one of the most up to date hashing algorithms, so no doubling and since it's even used for crytpocurrencies for securing transactions - if there was a way, they would already be cracked by now for the money.
+
+  SHA-256 seems like one of the most up to date hashing algorithms, so no doubling and since it's even used for crytpocurrencies for securing transactions - if there was a way, they would already be cracked by now for the money.
 
